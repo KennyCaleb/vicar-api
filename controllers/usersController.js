@@ -5,7 +5,7 @@ const register = async (req, res) => {
     try {
         const { fullName, email, pharmacyName, address } = req.body
         if (!fullName || !email || !pharmacyName || !address) {
-            return res.status(201).json({ msg: "User addedd successfully", user })
+            return res.status(400).json({ msg: "Some fields missing"})
         }
         const user = await Drugs.create({ fullName, email, pharmacyName, address })
         return res.status(201).json({ msg: "Drugs addedd successfully", user })

@@ -16,8 +16,8 @@ connectDb()
 // middlewares
 app.use(express.json())
 app.use(cors())
-app.use("/api/user", usersRoute)
-app.use("v1/api/drugs", drugsRoute)
+app.use("/v1/api/user", usersRoute)
+app.use("/v1/api/drugs", drugsRoute)
 
 app.all("*", (req, res) => {
     return res.status(200).send({ msg: 'Welcome to vicar api' })
