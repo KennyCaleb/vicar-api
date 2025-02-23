@@ -11,7 +11,7 @@ route.post("/", addDrugs)
 // @descr add drugs
 // @route /
 // @access private
-route.post("/", getDrugs)
+route.get("/", getDrugs)
 
 // @descr add drugs
 // @route /

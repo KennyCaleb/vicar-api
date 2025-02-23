@@ -3,7 +3,7 @@ const express = require("express")
 const dotenv = require("dotenv")
 const connectDb = require("./config/db")
 const cors = require("cors")
-// const usersRoute = require("./routes/drugRoute")
+const usersRoute = require("./routes/drugRoute")
 const drugsRoute = require("./routes/drugRoute")
 
 // config
@@ -16,8 +16,8 @@ connectDb()
 // middlewares
 app.use(express.json())
 app.use(cors())
-// app.use("/api/user", usersRoute)
-app.use("/api/drugs", drugsRoute)
+app.use("/api/user", usersRoute)
+app.use("v1/api/drugs", drugsRoute)
 
 app.all("*", (req, res) => {
     return res.status(200).send({ msg: 'Welcome to vicar api' })
