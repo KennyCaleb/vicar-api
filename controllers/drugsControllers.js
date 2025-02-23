@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Drugs = require("../routes/drugRoute")
+const Drugs = require("../models/drugsModel")
 
 const addDrugs = async (req, res) => {
     try {
@@ -13,7 +13,7 @@ const addDrugs = async (req, res) => {
     }
 }
 
-const getDrugs = async () => {
+const getDrugs = async (req, res) => {
     try {
         const drugs = await Drugs.find()
         return res.status(201).json({ msg: "Drugs fetched successfully", drugs })

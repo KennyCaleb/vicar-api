@@ -4,7 +4,7 @@ const { boolean } = require("webidl-conversions")
 const drugSchema = new mongoose.Schema(
     {
         batchNumber: String,
-        counterfeitRisk: boolean,
+        counterfeitRisk: Boolean,
         drug: String,
         forecast: Number,
         restockAt: Number,
